@@ -10,5 +10,5 @@ public class StudentView extends UserView {
     User findTheBest(List<User> userlist) {
         return userlist.get(0);
     }
-    
+
 }

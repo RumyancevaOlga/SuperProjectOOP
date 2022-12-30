@@ -1,22 +1,22 @@
 package data;
 
 public abstract class User {
-    private String FIO;
+    private String fio;
     private int birthday;
     private int passport;
 
-    public User(String FIO, int birthday, int passport) {
-        this.FIO = FIO;
+    public User(String fio, int birthday, int passport) {
+        this.fio = fio;
         this.birthday = birthday;
         this.passport = passport;
     }
 
-    public String getFIO() {
-        return FIO;
+    public String getFio() {
+        return fio;
     }
 
-    public void setFIO(String fIO) {
-        FIO = fIO;
+    public void setFio(String fio) {
+        this.fio = fio;
     }
 
     public int getBirthday() {

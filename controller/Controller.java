@@ -1,32 +1,35 @@
 package controller;
 
-import java.util.List;
-
+import data.Student;
 import data.StudentGroup;
+import repository.GroupRepository;
 import service.GroupStreamServiceImpl;
 import service.StudentGroupServiceImpl;
+import service.StudentService;
 
 public class Controller {
-    private List<StudentGroupServiceImpl> studentGroupServiceImpls;
+
+    private StudentService studentService;
+
+    public Controller(StudentService studentService) {
+        this.studentService = studentService;
+    }
+
+    public Student createStudent(Student student) {
+        studentService.create(student);
+        return (Student) studentService.read();
+    }
 
     public StudentGroup createStudentGroup(int groupNumber) {
-        StudentGroupServiceImpl studentGroupServiceImpl = new StudentGroupServiceImpl();
-        for (int i = 0; i < studentGroupServiceImpls.size(); i++) {
-            if(groupNumber == studentGroupServiceImpls.get(i).getStudentGroup().getStudents().get(0).getGroupNumber())
-            {
-                studentGroupServiceImpl = studentGroupServiceImpls.get(i);
-            }
-        }
-        return studentGroupServiceImpl.getStudentGroup();
+        return new StudentGroupServiceImpl(new GroupRepository()).getStudentGroup();
     }
 
-    public void removeStudent (String FIO) {
-        for (int i = 0; i < studentGroupServiceImpls.size(); i++) {
-            studentGroupServiceImpls.get(i).removeStudent(FIO);
-        }
+    public void removeStudent(String fio) {
+        StudentGroupServiceImpl studentGroupServiceImpl = new StudentGroupServiceImpl(new GroupRepository());
+        studentGroupServiceImpl.removeStudent(fio);
     }
 
-    public void sortGroupStream (GroupStreamServiceImpl groupStreamServiceImpl) {
+    public void sortGroupStream(GroupStreamServiceImpl groupStreamServiceImpl) {
         sortGroupStream(groupStreamServiceImpl);
     }
 }

@@ -9,15 +9,15 @@ import data.User;
 public class ReaderFromTxt {
     private String path;
 
-    public static User read () {
+    public static User read() {
         return null;
     }
 
-    public static Teacher readTeacher () {
+    public static Teacher readTeacher() {
         return null;
     }
 
-    public static List<Student> readStudents () {
+    public static List<Student> readStudents() {
         return null;
     }
 }

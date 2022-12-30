@@ -3,11 +3,11 @@ package data;
 public class Teacher extends User {
     private String department;
 
-    public Teacher(String FIO, int birthday, int passport, String department) {
-        super(FIO, birthday, passport);
+    public Teacher(String fio, int birthday, int passport, String department) {
+        super(fio, birthday, passport);
         this.department = department;
     }
-    
+
     public String getDepartment() {
         return department;
     }

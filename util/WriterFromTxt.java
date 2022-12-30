@@ -5,7 +5,7 @@ import data.User;
 public class WriterFromTxt {
     private String path;
 
-    public static void write(User user) {
-    
+    public static User write(User user) {
+        return user;
     }
 }

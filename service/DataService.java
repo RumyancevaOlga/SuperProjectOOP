@@ -2,8 +2,8 @@ package service;
 
 import data.User;
 
-public interface DataService {
+public interface DataService<E extends User> {
     public User read();
 
-    public void create(User user);
+    public User create(User user);
 }

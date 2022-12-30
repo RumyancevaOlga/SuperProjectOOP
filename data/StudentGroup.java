@@ -3,6 +3,8 @@ package data;
 import java.util.Iterator;
 import java.util.List;
 
+import iterators.StudentGroupIterator;
+
 public class StudentGroup implements Iterable<Student> {
     private Teacher teacher;
     private List<Student> students;

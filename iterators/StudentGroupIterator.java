@@ -1,7 +1,10 @@
-package data;
+package iterators;
 
 import java.util.Iterator;
 import java.util.List;
+
+import data.Student;
+import data.StudentGroup;
 
 public class StudentGroupIterator implements Iterator<Student> {
     private StudentGroup studentGroup;
@@ -26,7 +29,7 @@ public class StudentGroupIterator implements Iterator<Student> {
         return students.get(cursor++);
         // return this.students.next();
     }
-    
+
     @Override
     public void remove() {
         this.students.remove(cursor);

@@ -3,10 +3,12 @@ package data;
 import java.util.Iterator;
 import java.util.List;
 
-public class GroupStream implements Iterable<StudentGroup>{
-    private List <StudentGroup> listStudentGroup;
+import iterators.GroupStreamIterator;
 
-    public GroupStream(List <StudentGroup> listStudentGroup) {
+public class GroupStream implements Iterable<StudentGroup> {
+    private List<StudentGroup> listStudentGroup;
+
+    public GroupStream(List<StudentGroup> listStudentGroup) {
         this.listStudentGroup = listStudentGroup;
     }
 
@@ -22,5 +24,5 @@ public class GroupStream implements Iterable<StudentGroup>{
     public Iterator<StudentGroup> iterator() {
         return new GroupStreamIterator(listStudentGroup);
     }
-    
+
 }

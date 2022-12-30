@@ -3,11 +3,11 @@ package data;
 public class Student extends User implements Comparable<Student> {
     private int groupNumber;
 
-    public Student(String FIO, int birthday, int passport, int groupNumber) {
-        super(FIO, birthday, passport);
+    public Student(String fio, int birthday, int passport, int groupNumber) {
+        super(fio, birthday, passport);
         this.groupNumber = groupNumber;
     }
-    
+
     public int getGroupNumber() {
         return groupNumber;
     }
@@ -18,8 +18,10 @@ public class Student extends User implements Comparable<Student> {
 
     @Override
     public int compareTo(Student student) {
-        if(student.getBirthday() < this.getBirthday()) return 1;
-        if(student.getBirthday() > this.getBirthday()) return -1;
+        if (student.getBirthday() < this.getBirthday())
+            return 1;
+        if (student.getBirthday() > this.getBirthday())
+            return -1;
         return 0;
     }
 

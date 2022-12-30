@@ -31,3 +31,23 @@
 3. Создать класс GroupStreamServiceImpl, добавив в него метод сортировки списка потоков, используя созданный GroupStreamComparator.
 4. Модифицировать класс Controller, добавив в него созданный сервис.
 5. Модифицировать класс Controller, добавив в него метод, сортирующий список потоков, путем вызова созданного сервиса.
+
+
+# Семинар 4
+
+1. Создать пекедж repository. Дальнейшие работы ведем в нем. Реализовать в нем интерфейс Repository <E,I>. Задать в созданном интерфейсе 2 абстрактных метода: E save(E entity) E findById(I id). 
+2. Создать класс GroupRepository, имплементировав в него репозиторий <Group,Integer>.
+3. В классе StudentGroupServiceImpl добавить новую переменную Repository<Group,Integer>.
+4. В классе StudentGroupServiceImpl реализовать методы сохранения группы и поиска ее по номеру.   
+5. Создать интерфейс UserRepository<E extends User,I> унаследовав его от Repository<E,I>.
+6. В интерфейс UserRepository<E,I> задать абстрактный метод E findByFio(String fio).
+7. Создать класс StudentRepository имплементировав интерфейс UserRepository<Student, Integer>.
+8. В классе StudentService добавить новую переменную StudentRepository.
+9. В классе StudentService реализовать методы сохранения студента и его поиска по id и ФИО.
+
+# Домашнее задание 4
+1. Реализовать класc TeacherRepository (обобщение на ваше усмотрение).
+2. Обобщить интерфейс DataService, чтобы он работал только с наследникам класса User.
+3. Реализовать методы поиска и сохранения в классе TeacherService.
+4. Реализовать как можно более обобщенный интерфейс Controller. Создать классы StudentController, TeacherController, GroupController с методами сохранения и поиска соответствующих объектов.
+5. Реализовать такой же функционал для класса GroupStream.

@@ -1,13 +1,15 @@
-package data;
+package iterators;
 
 import java.util.Iterator;
 import java.util.List;
 
+import data.StudentGroup;
+
 public class GroupStreamIterator implements Iterator<StudentGroup> {
-    private List <StudentGroup> listStudentGroup;
+    private List<StudentGroup> listStudentGroup;
     private int cursor;
 
-    public GroupStreamIterator(List <StudentGroup> listStudentGroup) {
+    public GroupStreamIterator(List<StudentGroup> listStudentGroup) {
         this.listStudentGroup = listStudentGroup;
     }
 
@@ -21,5 +23,5 @@ public class GroupStreamIterator implements Iterator<StudentGroup> {
         return listStudentGroup.get(cursor++);
 
     }
-    
+
 }
