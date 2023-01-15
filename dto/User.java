@@ -1,4 +1,4 @@
-package data;
+package dto;
 
 public abstract class User {
     private String fio;
@@ -9,6 +9,10 @@ public abstract class User {
         this.fio = fio;
         this.birthday = birthday;
         this.passport = passport;
+    }
+
+    public User(String fio) {
+        this.fio = fio;
     }
 
     public String getFio() {

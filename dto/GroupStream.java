@@ -1,9 +1,9 @@
-package data;
+package dto;
 
 import java.util.Iterator;
 import java.util.List;
 
-import iterators.GroupStreamIterator;
+import dto.iterators.GroupStreamIterator;
 
 public class GroupStream implements Iterable<StudentGroup> {
     private List<StudentGroup> listStudentGroup;

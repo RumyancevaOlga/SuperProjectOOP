@@ -1,7 +1,7 @@
 package controller;
 
-import data.Student;
-import data.StudentGroup;
+import dto.Student;
+import dto.StudentGroup;
 import repository.GroupRepository;
 import service.GroupStreamServiceImpl;
 import service.StudentGroupServiceImpl;

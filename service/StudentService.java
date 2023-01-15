@@ -1,7 +1,7 @@
 package service;
 
-import data.Student;
-import data.User;
+import dto.Student;
+import dto.User;
 import repository.StudentRepository;
 import util.ReaderFromTxt;
 import util.WriterFromTxt;
@@ -14,22 +14,36 @@ public class StudentService implements DataService<Student> {
         this.studentRepository = studentRepository;
     }
 
-    public Student saveStudent(Student student) {
-        return studentRepository.save(student);
+    public Student deleteStudent(Student student) {
+        return studentRepository.deleteStudent(student);
     }
 
-    public Student findStudentById(int id) {
+    public Student deleteStudentByFio(String fio) {
+        return studentRepository.deleteStudentByFio(fio);
+    }
+
+    public Student deleteStudentByGroupAndBirthday(int groupNumber, int birthday) {
+        return studentRepository.deleteStudentByGroupAndBirthday(groupNumber, birthday);
+    }
+
+    @Override
+    public Student read() {
+        return (Student) ReaderFromTxt.read();
+    }
+
+    @Override
+    public Student create(Student student) {
+        return (Student) WriterFromTxt.write(student);
+    }
+
+    @Override
+    public Student findUserById(int id) {
         return studentRepository.findById(id);
     }
 
     @Override
-    public User read() {
-        return ReaderFromTxt.read();
-    }
-
-    @Override
-    public User create(User user) {
-        return WriterFromTxt.write(user);
+    public Student saveUser(Student user) {
+        return studentRepository.save(user);
     }
 
 }

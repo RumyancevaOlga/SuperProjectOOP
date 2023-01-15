@@ -1,7 +1,7 @@
 package service;
 
-import data.Teacher;
-import data.User;
+import dto.Teacher;
+import dto.User;
 import repository.TeacherRepository;
 import util.ReaderFromTxt;
 import util.WriterFromTxt;
@@ -14,22 +14,24 @@ public class TeacherService implements DataService<Teacher> {
         this.teacherRepository = teacherRepository;
     }
 
-    public Teacher saveTeacher(Teacher teacher) {
-        return teacherRepository.save(teacher);
+    @Override
+    public Teacher read() {
+        return (Teacher) ReaderFromTxt.read();
     }
 
-    public Teacher findTeacherById(int id) {
+    @Override
+    public Teacher create(Teacher user) {
+        return (Teacher) WriterFromTxt.write(user);
+    }
+
+    @Override
+    public Teacher saveUser(Teacher user) {
+        return teacherRepository.save(user);
+    }
+
+    @Override
+    public Teacher findUserById(int id) {
         return teacherRepository.findById(id);
-    }
-
-    @Override
-    public User read() {
-        return ReaderFromTxt.read();
-    }
-
-    @Override
-    public User create(User user) {
-        return WriterFromTxt.write(user);
     }
 
 }

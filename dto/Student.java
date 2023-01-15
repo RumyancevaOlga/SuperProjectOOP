@@ -1,4 +1,4 @@
-package data;
+package dto;
 
 public class Student extends User implements Comparable<Student> {
     private int groupNumber;
@@ -6,6 +6,10 @@ public class Student extends User implements Comparable<Student> {
     public Student(String fio, int birthday, int passport, int groupNumber) {
         super(fio, birthday, passport);
         this.groupNumber = groupNumber;
+    }
+
+    public Student(String fio) {
+        super(fio);
     }
 
     public int getGroupNumber() {

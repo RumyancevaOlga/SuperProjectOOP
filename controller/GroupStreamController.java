@@ -1,6 +1,6 @@
 package controller;
 
-import data.GroupStream;
+import dto.GroupStream;
 import service.GroupStreamServiceImpl;
 
 public class GroupStreamController implements InterfaceController<GroupStream, Integer> {

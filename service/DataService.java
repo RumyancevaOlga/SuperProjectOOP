@@ -1,9 +1,13 @@
 package service;
 
-import data.User;
+import dto.User;
 
 public interface DataService<E extends User> {
-    public User read();
+    E read();
 
-    public User create(User user);
+    E create(E user);
+
+    E saveUser(E user);
+
+    E findUserById(int id);
 }

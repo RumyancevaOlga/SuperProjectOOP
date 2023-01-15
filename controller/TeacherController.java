@@ -1,6 +1,6 @@
 package controller;
 
-import data.Teacher;
+import dto.Teacher;
 import service.TeacherService;
 
 public class TeacherController implements InterfaceController<Teacher, Integer> {
@@ -13,12 +13,12 @@ public class TeacherController implements InterfaceController<Teacher, Integer> 
 
     @Override
     public Teacher save(Teacher teacher) {
-        return teacherService.saveTeacher(teacher);
+        return teacherService.saveUser(teacher);
     }
 
     @Override
     public Teacher find(Integer id) {
-        return teacherService.findTeacherById(id);
+        return teacherService.findUserById(id);
     }
 
 }

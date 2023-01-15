@@ -1,6 +1,6 @@
 package service;
 
-import data.StudentGroup;
+import dto.StudentGroup;
 
 public interface StudentGroupService {
     public StudentGroup getStudentGroup();

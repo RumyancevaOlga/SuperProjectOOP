@@ -1,6 +1,6 @@
 package repository;
 
-import data.GroupStream;
+import dto.GroupStream;
 
 public class GroupStreamRepository implements Repository<GroupStream, Integer> {
 
