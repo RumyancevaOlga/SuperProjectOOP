@@ -4,29 +4,36 @@ import java.util.Scanner;
 
 import terminal.executable.CommandExecutable;
 import terminal.executable.CommandExecutableFactory;
+import terminal.executable.CommandExecutableFactoryImpl;
+import terminal.executable.LogingCommandExecutableFactory;
 
 public class TerminalReader {
     private static TerminalReader terminalReader;
-    private CommandParser commandParser;
+    private final CommandParser commandParser;
+    private final CommandExecutableFactory commandExecutableFactory;
 
-    public static TerminalReader getInstance(CommandParser commandParser) {
+    public static TerminalReader getInstance(CommandParser commandParser,
+            CommandExecutableFactory commandExecutableFactory) {
         if (terminalReader == null)
-            terminalReader = new TerminalReader(commandParser);
+            terminalReader = new TerminalReader(commandParser, commandExecutableFactory);
         return terminalReader;
     }
 
-    private TerminalReader(CommandParser commandParser) {
+    private TerminalReader(CommandParser commandParser, CommandExecutableFactory commandExecutableFactory) {
         this.commandParser = commandParser;
+        this.commandExecutableFactory = commandExecutableFactory;
     }
 
-    public void getInfo() {
+    public void runReader() {
         Scanner in = new Scanner(System.in);
         while (true) {
             String command = in.nextLine();
-            String[] parseCommand = commandParser.parseCommand(command);
-            CommandExecutableFactory commandExecutableFactory = new CommandExecutableFactory();
-            CommandExecutable commandExecutable = commandExecutableFactory.command(parseCommand);
-            commandExecutable.execute();
+            Command parseCommand = commandParser.parseCommand(command);
+            // CommandExecutableFactoryImpl commandExecutableFactory = new
+            // LogingCommandExecutableFactory(null);
+            // CommandExecutable commandExecutable =
+            // commandExecutableFactory.command(parseCommand);
+            commandExecutableFactory.command(parseCommand);
         }
     }
 }

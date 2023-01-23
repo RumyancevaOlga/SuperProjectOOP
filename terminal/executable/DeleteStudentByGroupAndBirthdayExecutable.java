@@ -5,17 +5,19 @@ import service.StudentService;
 
 public class DeleteStudentByGroupAndBirthdayExecutable implements CommandExecutable {
     private StudentService studentService;
-    private Student student;
+    private int groupNumber;
+    private int birthday;
 
-    public DeleteStudentByGroupAndBirthdayExecutable(StudentService studentService, Student student) {
-        this.student = student;
+    public DeleteStudentByGroupAndBirthdayExecutable(StudentService studentService, int groupNumber, int birthday) {
+        this.groupNumber = groupNumber;
+        this.birthday = birthday;
         this.studentService = studentService;
     }
 
     @Override
     public void execute() {
-        studentService.deleteStudentByGroupAndBirthday(student.getGroupNumber(), student.getBirthday());
-        System.out.println("Delete student: " + student.getFio());
+        studentService.deleteStudentByGroupAndBirthday(groupNumber, birthday);
+        System.out.println("Students were removed from " + groupNumber + " group born in " + birthday);
     }
 
 }
