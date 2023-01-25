@@ -11,13 +11,13 @@ public class Command {
     private List<String> arguments;
     private String mainFirstCommand;
 
-    public Command(List<String> arguments, String mainFirstCommand) {
+    public Command(List<String> arguments) {
         this.arguments = arguments;
-        this.mainFirstCommand = mainFirstCommand;
+        this.mainFirstCommand = arguments.get(0);
     }
 
     public String getFirstArgument() {
-        return arguments.get(0);
+        return arguments.get(1);
     }
 
     public boolean isCreateCommand() {

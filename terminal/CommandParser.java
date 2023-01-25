@@ -1,5 +1,5 @@
 package terminal;
 
-public interface CommandParser {
-    Command parseCommand(String inputCommand);
+public interface CommandParser<E> {
+    Command parseCommand(E inputCommand);
 }

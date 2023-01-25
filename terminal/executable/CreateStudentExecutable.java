@@ -15,6 +15,5 @@ public class CreateStudentExecutable implements CommandExecutable {
     @Override
     public void execute() {
         studentService.saveUser(student);
-        System.out.println("Add student: " + student.getFio());
     }
 }

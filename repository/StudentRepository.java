@@ -1,14 +1,22 @@
 package repository;
 
+import db.StudentTable;
 import dto.Student;
 
 public class StudentRepository implements UserRepository<Student, Integer> {
+    private StudentTable studentTable;
+
+    public StudentRepository(StudentTable studentTable) {
+        this.studentTable = studentTable;
+    }
 
     public Student deleteStudent(Student student) {
+        studentTable.deleteStudent(student);
         return null;
     }
 
     public Student deleteStudentByFio(String fio) {
+        studentTable.deleteByFio(fio);
         return null;
     }
 
@@ -18,7 +26,7 @@ public class StudentRepository implements UserRepository<Student, Integer> {
 
     @Override
     public Student save(Student entity) {
-        return null;
+        return studentTable.save(entity);
     }
 
     @Override

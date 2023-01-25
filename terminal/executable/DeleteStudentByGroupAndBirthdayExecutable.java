@@ -17,7 +17,6 @@ public class DeleteStudentByGroupAndBirthdayExecutable implements CommandExecuta
     @Override
     public void execute() {
         studentService.deleteStudentByGroupAndBirthday(groupNumber, birthday);
-        System.out.println("Students were removed from " + groupNumber + " group born in " + birthday);
     }
 
 }

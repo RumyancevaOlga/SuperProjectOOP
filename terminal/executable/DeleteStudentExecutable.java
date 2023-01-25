@@ -15,7 +15,6 @@ public class DeleteStudentExecutable implements CommandExecutable {
     @Override
     public void execute() {
         studentService.deleteStudent(student);
-        System.out.println("Delete student: " + student.getFio());
     }
 
 }

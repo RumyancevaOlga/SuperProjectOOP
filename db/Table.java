@@ -12,6 +12,9 @@ public abstract class Table<E> {
 
     public E save(E entity) {
         elements.add(entity);
+        for (E e : elements) {
+            System.out.println(e);
+        }
         return entity;
     }
 }
